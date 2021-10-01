@@ -4,9 +4,23 @@
 // Laberynth Solver using backtracking
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
+const int N = 4;
+
 int main() {
-    cout << "HOLA MUNDO" << endl;
+    ifstream laberinto;
+    laberinto.open("4x4.txt");
+
+    if (laberinto.fail()) {
+        cerr << "File not created!" << endl;
+        exit(1);
+    }
+    else{
+        cout << "Todo bien" << endl;
+    }
+
+    laberinto.close();
     return 0;
 }
