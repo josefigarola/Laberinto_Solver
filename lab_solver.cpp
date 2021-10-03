@@ -7,11 +7,17 @@
 // Complejidad de O(n^2)
 
 #include <iostream>
+#include <string>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
-string m;
-string n;
+string pm; // parametro de m
+string pn; // parametro de n
+int m; // m a entero
+int n; // n a entero
+string line;
+int cont = 0;
 const int N = 4;
 int posx, posy = 0; // Posicion x,y
 
@@ -106,17 +112,18 @@ void Iniciar(const string& archivo){
         cout << "File opened correctly" << endl;
     }
 
-    while (getline(file, m)) {
-        // Output the text from the file
-        cout << m;
+    // OBTENER PARAMETROS PARA MxN
+    while(file >> line) {
+        cout << line;
     }
     cout << endl;
 
-    for(int i = 0; i < N; i++){
+    // FOR SIN MxN EL ACTUAL
+    /*for(int i = 0; i < N; i++){
         for(int j = 0; j < N; j++) {
             file >> laberinto[i][j];
         }
-    }
+    }*/
 
     file.close();
 
@@ -133,6 +140,7 @@ int main() {
 
     cout << "Which board you want to solve: ";
     cin >> ejercicio;
+    cout<<endl;
 
     Iniciar(ejercicio);
 
