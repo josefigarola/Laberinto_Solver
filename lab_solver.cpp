@@ -148,11 +148,9 @@ bool isSafe(string board[M][N], int x, int y){
     }
 
     return false;
-
 }
 
 bool solveUtil(string tablero[M][N], int x, int y){
-
     // Mejor de los casos
     if(x == M - 1 && y == N - 1 && tablero[x][y] == "1"){ // La posición inicial es la final
         tablero[x][y] = "x";
@@ -203,7 +201,6 @@ bool solveUtil(string tablero[M][N], int x, int y){
 // True = tiene solucion y se imprime
 // False = no tiene solucion
 bool solve(string board[M][N]){
-
     if(!solveUtil(board,0,0)){ // Si no tiene solucion el tablero o hay un error
         cout << "There's no solution" << endl; // Algo salio mal
         exit(1);
